@@ -1,0 +1,69 @@
+{form form}
+<div>
+	{label name, class => 'font-bold'/}:
+	{input name, class => 'w-full rounded-md px-4 bg-gray-200 text-gray-800 text-sm pt-3 outline-red-500
+	focus:bg-transparent'}
+</div>
+<div>
+	{label email, class => 'font-bold'/}:
+	{input email, class => 'w-full rounded-md px-4 bg-gray-200 text-gray-800 text-sm pt-3 outline-red-500
+	focus:bg-transparent'}
+</div>
+<div>
+	{label subject, class => 'font-bold'/}:
+	{input subject, class => 'w-full rounded-md px-4 bg-gray-200 text-gray-800 text-sm pt-3 outline-red-500
+	focus:bg-transparent'}
+</div>
+<div>
+	{label message, class => 'font-bold'/}
+	{input message, class => 'w-full rounded-md px-4 bg-gray-200 text-gray-800 text-sm pt-3 outline-red-500
+	focus:bg-transparent'}
+</div>
+{input submit, class => 'text-white bg-red-500 hover:bg-red-600 tracking-wide rounded-md text-sm px-4 py-3
+w-full !mt-6'}
+
+<script n:syntax="off">
+	const observer = new MutationObserver((mutationsList) => {
+		for (const mutation of mutationsList) {
+			if (mutation.type === 'childList') {
+				mutation.addedNodes.forEach((node) => {
+					if (node.nodeName === 'DIALOG' && node.classList.contains('netteFormsModal')) {
+						const styleTag = node.querySelector('style');
+						if (styleTag) {
+							styleTag.remove();
+						}
+						styleDialogLines(node);
+					}
+				});
+			}
+		}
+	});
+
+	observer.observe(document.body, {childList: true, subtree: true});
+
+	function styleDialogLines(dialog) {
+		const lines = dialog.innerHTML.split('<br>');
+		const styledLines = lines.map(line => {
+			const trimmed = line.trim();
+			if (trimmed.length === 0) return line;
+
+			const words = trimmed.split(' ');
+			const firstWord = words.shift();
+			const restOfLine = words.join(' ');
+
+			return `<span class="font-bold">${firstWord}</span> ${restOfLine}`;
+		});
+
+		dialog.innerHTML = styledLines.join('<br>');
+		dialog.classList.add('border-2', 'border-black', 'rounded-xl', 'p-10', 'text-center');
+
+		const button = dialog.querySelector('button');
+		if (button) {
+			button.classList.add('mx-auto', 'block', 'py-2', 'px-6', 'border-2', 'border-red-500', 'rounded-xl');
+			button.addEventListener('click', () => {
+				dialog.close();
+			});
+		}
+	}
+</script>
+{/form}

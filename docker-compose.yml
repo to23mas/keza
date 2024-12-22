@@ -1,0 +1,12 @@
+services:
+  php-apache:
+    ports:
+      - "80:80"
+    build:
+      context: .
+    volumes:
+      - "./:/var/www/html/"
+
+networks:
+  default:
+    name: "keza"

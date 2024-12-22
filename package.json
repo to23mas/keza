@@ -1,0 +1,25 @@
+{
+	"name": "Keza-nette",
+	"version": "1.0.0",
+	"description": "Nette Web Project",
+	"main": "index.js",
+	"scripts": {
+		"assets": "tailwindcss build -i assets/styles.css -o www/styles.css",
+		"assets:w": "tailwindcss build -i assets/styles.css -o www/styles.css --watch",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"flowbite": "^2.2.1",
+		"ublaboo-datagrid": "^6.9.1"
+	},
+	"devDependencies": {
+		"autoprefixer": "^10.4.20",
+		"postcss": "^8.4.48",
+		"tailwindcss": "^3.4.14",
+		"vite": "^5.4.11"
+	}
+}
