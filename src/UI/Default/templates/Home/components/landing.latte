@@ -1,15 +1,16 @@
 <style>
 .t1 {
 	text-shadow:
-		-1px -1px 0 rgba(0, 0, 0, 1),
+	-1px -1px 0 rgba(0, 0, 0, 1),
 	-1px 1px 0 rgba(0, 0, 0, 1),
 	1px -1px 0 rgba(0, 0, 0, 1),
 	1px 1px 1px rgba(0, 0, 0, 1); /* Extra for depth */
 }
 </style>
+
 <div class="transition-all duration-1000 ease-in-out" id="landing">
 	<div class="max-w-screen-xl md:max-h-screen mx-auto" id="landing-content">
-		<header class="sm:pt-32 sm:pb-28">
+		<header class="sm:pt-32 sm:pb-20">
 			<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">
 				<div id="alert-2" class="flex items-center p-4 mb-4 {if $flash->type === 'fail'} text-red-800 bg-red-50 {else} text-green-800 bg-green-50 {/if}rounded-lg" role="alert">
 					<div class="ms-3 text-sm font-medium sm:w-1/2">
@@ -24,68 +25,57 @@
 				</div>
 			</div>
 			<div class="">
-				<div id="landingLogo"
-					 class="sm:h-full w-full ">
-					<img class="mx-auto sm:ml-24 w-32 sm:w-64 py-10 sm:py-0" src="/images/logo.png" alt="triangle with all three sides equal" height="250" width="250" />
-				</div>
-				<div class="items-center mx-auto sm:ml-14 sm:items-start w-full sm:w-2/3 sm:pt-12 sm:pl-1">
+				<div class="pt-20 items-center mx-auto sm:ml-14 sm:items-start w-full sm:w-2/3 sm:pt-12 sm:pl-1">
 					<h1 id="landingMotto"
-						class=" text-center sm:text-left font-extrabold text-gray-50 text-5xl lg:text-6xl drop-shadow-[3px_5.0px_3.0px_rgba(0,0,0,1.0)] t1">
+						class="z-50 text-center sm:text-left font-extrabold text-gray-50 text-5xl lg:text-6xl drop-shadow-[3px_5.0px_3.0px_rgba(0,0,0,1.0)] t1">
 						{$motto}
 					</h1>
-					<div
-							class="t1 text-center sm:text-left mt-5 flex flex-col sm:flex-row gap-y-1 gap-x-4 text-gray-300 font-bold text-3xl lg:text-3xl drop-shadow-[3px_5.0px_3.0px_rgba(0,0,0,1.0)]">
+					<div class="t1 text-center sm:text-left mt-5 flex flex-col sm:flex-row gap-y-1 gap-x-4 text-gray-300 font-bold text-3xl lg:text-3xl drop-shadow-[3px_5.0px_3.0px_rgba(0,0,0,1.0)]">
 						<div class="">Deratizace</div>
 						<div class="">Dezinfekce</div>
 						<div class="">Dezinsekce</div>
 					</div>
-					<img class="sm:hidden w-full" src="/images/mobile.png" alt="triangle with all three sides equal"/>
 				</div>
 			</div>
-			<div class="sm:relative sm:-bottom-24 grid md:grid-cols-4 grid-cols-2 md:rounded-lg shadow-gray-400 shadow-lg">
-				<figure class="
-							   bg-opacity-80
+			<div class="grid md:grid-cols-4 grid-cols-2 md:rounded-lg shadow-gray-400 shadow-lg mt-32 ">
+				<figure class=" bg-opacity-95
 							   transform duration-200 hover:bg-opacity-100
 							   md:hover:scale-110
-							   flex flex-col items-center p-8 text-center bg-white border-b border-gray-200 md:rounded-l-lg
+							   flex flex-col items-center p-2 sm:p-8 text-center bg-white border-b border-gray-200 md:rounded-l-lg
 							   ">
 					<img src="/images/svj.svg" alt="triangle with all three sides equal" height="87" width="100" />
 					<blockquote class="max-w-2xl mx-auto text-gray-500">
 						<h3 class="text-2xl font-semibold text-gray-900 ">Bytová družstva SVJ</h3>
 					</blockquote>
 				</figure>
-				<figure class="
-							   bg-opacity-80
+				<figure class=" bg-opacity-95
 							   transform duration-200 hover:bg-opacity-100
 							   md:hover:scale-110
-							   flex flex-col items-center p-8 text-center bg-white border-b border-gray-200">
+							   flex flex-col items-center p-2 sm:p-8 text-center bg-white border-b border-gray-200">
 					<img src="/images/firmy.svg" alt="triangle with all three sides equal" height="87" width="100" />
 					<blockquote class="max-w-2xl mx-auto text-gray-500">
 						<h3 class="text-2xl font-semibold text-gray-900">Firmy / Sklady</h3>
 					</blockquote>
 				</figure>
-				<figure class="
-							   bg-opacity-80
+				<figure class=" bg-opacity-95
 							   transform duration-200 hover:bg-opacity-100
 							   md:hover:scale-110
-							   flex flex-col items-center p-8 text-center bg-white border-b border-gray-200 md:border-e ">
+							   flex flex-col items-center p-2 sm:p-8 text-center bg-white border-b border-gray-200 ">
 					<img src="/images/home.svg" alt="triangle with all three sides equal" height="87" width="100" />
 					<blockquote class="max-w-2xl mx-auto text-gray-500">
 						<h3 class="text-2xl font-semibold text-gray-900">Domácnost</h3>
 					</blockquote>
 				</figure>
-				<figure class="
-							   bg-opacity-80
+				<figure class=" bg-opacity-95
 							   transform duration-200 hover:bg-opacity-100
 							   md:hover:scale-110
-							   flex flex-col items-center p-8 text-center bg-white border-gray-200 md:rounded-r-lg">
-					<img src="/images/soud.svg" alt="triangle with all three sides equal" height="87"
-																						  width="100" />
+							   flex flex-col items-center p-2 sm:p-8 text-center bg-white border-gray-200 md:rounded-r-lg">
+					<img src="/images/soud.svg" alt="triangle with all three sides equal" height="87" width="100" />
 					<blockquote class="max-w-2xl mx-auto text-gray-500">
 						<h3 class="text-2xl font-semibold text-gray-900 ">Veřejné instituce</h3>
 					</blockquote>
 				</figure>
-		</header>
 			</div>
+		</header>
 	</div>
 </div>
