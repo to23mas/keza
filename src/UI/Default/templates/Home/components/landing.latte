@@ -7,10 +7,9 @@
 	1px 1px 1px rgba(0, 0, 0, 1); /* Extra for depth */
 }
 </style>
-<div class="transition-all duration-1000 ease-in-out bg-no-repeat bg-center bg-cover bg-gray-200" id="landing"
-	style="background-image: url('/images/land.jpeg');">
-	<div class="max-w-screen-xl sm:max-h-screen mx-auto " id="landing-content">
-		<header class="sm:pt-36 sm:pb-28">
+<div class="transition-all duration-1000 ease-in-out" id="landing">
+	<div class="max-w-screen-xl sm:max-h-screen mx-auto" id="landing-content">
+		<header class="sm:pt-32 sm:pb-28">
 			<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">
 				<div id="alert-2" class="flex items-center p-4 mb-4 {if $flash->type === 'fail'} text-red-800 bg-red-50 {else} text-green-800 bg-green-50 {/if}rounded-lg" role="alert">
 					<div class="ms-3 text-sm font-medium sm:w-1/2">
@@ -24,9 +23,12 @@
 					</button>
 				</div>
 			</div>
-			<div
-				class="flex sm:p-14 sm:flex-row flex-col-reverse gap-1 rounded-full">
-				<div class="items-center m-auto">
+			<div class="">
+				<div id="landingLogo"
+					class="sm:h-full w-full ">
+					<img class="mx-auto sm:ml-24 w-32 sm:w-64 py-10 sm:py-0" src="/images/logo.png" alt="triangle with all three sides equal" height="250" width="250" />
+				</div>
+				<div class="items-center mx-auto sm:ml-14 sm:items-start w-full sm:w-2/3 sm:pt-12 sm:pl-1">
 					<h1 id="landingMotto"
 						class=" text-center sm:text-left font-extrabold text-gray-50 text-5xl lg:text-6xl drop-shadow-[3px_5.0px_3.0px_rgba(0,0,0,1.0)] t1">
 						{$motto}
@@ -37,13 +39,8 @@
 						<div class="">Dezinfekce</div>
 						<div class="">Dezinsekce</div>
 					</div>
+					<img class="sm:hidden w-full" src="/images/mobile.png" alt="triangle with all three sides equal"/>
 				</div>
-
-				<div id="landingLogo"
-					class="h-64 sm:h-full flex sm:justify-end sm:items-end items-center justify-center scale-50 sm:scale-100">
-					<img src="/images/logo.png" alt="triangle with all three sides equal" height="400" width="400" />
-				</div>
-
 			</div>
 		</header>
 		<div class="md:h-32">
