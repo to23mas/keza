@@ -8,24 +8,18 @@ use Nette\Application\UI\Presenter;
 use Nette\DI\Attributes\Inject;
 
 
-final class HomePresenter extends Presenter
+final class SluzbyPresenter extends Presenter
 {
 	#[Inject]
 	public ContactFormFactory $contactFormFactory;
 
-	public function actionDefault(): void
+	public function actionDruzstva(): void
 	{
-		$this->template->motto = 'Keza to je záruka jistoty a kvality rychlé pomoci';
-		$this->template->servicesHeader = 'Naše služby';
+		$this->template->servicesHeader = '';
 	}
 
 	protected function createComponentContactForm(): ContactForm
 	{
 		return $this->contactFormFactory->create();
-	}
-
-	public function actionLanding(): void 
-	{
-		$this->template->motto = 'Keza to je záruka jistoty a kvality rychlé pomoci';
 	}
 }

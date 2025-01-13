@@ -1,0 +1,76 @@
+<style>
+	.t1 {
+		text-shadow:
+			-1px -1px 0 rgba(0, 0, 0, 1),
+			-1px 1px 0 rgba(0, 0, 0, 1),
+			1px -1px 0 rgba(0, 0, 0, 1),
+			1px 1px 1px rgba(0, 0, 0, 1);
+		/* Extra for depth */
+	}
+</style>
+
+<div class="w-full relative overflow-hidden pt-14">
+	<video class="absolute left-1/2 transform -translate-x-1/2 w-full max-w-screen-xl object-cover z-0" loop autoplay
+		muted>
+		<source src="/images/j.mp4" type="video/mp4">
+	</video>
+	<div class="relative z-50 max-w-screen-2xl mx-auto -top-12">
+		{include ../nonMovableNavbar.latte}
+	</div>
+	<header class="m-auto max-w-screen-2xl">
+		<div class=" w-full mb-64">
+			<div
+				class="content-center text-center sm:text-left mt-1 text-gray-100 font-bold text-3xl lg:text-6xl drop-shadow-[3px_5.0px_3.0px_rgba(0,0,0,1.0)]">
+				Deratizace Dezinfekce Dezinsekce
+			</div>
+			<h1
+				class="mt-4 text-center m-auto sm:text-left font-extrabold text-gray-50 text-5xl lg:text-3xl drop-shadow-[3px_5.0px_3.0px_rgba(0,0,0,1.0)] t1">
+				{$motto}
+			</h1>
+		</div>
+		<br>
+	</header>
+</div>
+<div class="m-auto max-w-screen-2xl  mt-8 grid md:grid-cols-4 grid-cols-2 gap-2 shadow-lg">
+	<figure class="
+				   max-w-96
+				   bg-opacity-75 py-6
+							   transform duration-200 hover:bg-opacity-100
+							   md:hover:scale-110
+							   flex flex-col items-center text-center bg-white ">
+		<img src="/images/svj.svg" alt="triangle with all three sides equal" height="87" width="100" />
+		<blockquote class="mx-auto text-gray-500">
+			<h3 class="text-2xl font-semibold text-gray-900 ">Bytová družstva SVJ</h3>
+		</blockquote>
+	</figure>
+	<figure class=" bg-opacity-75 py-6
+				   max-w-96
+							   transform duration-200 hover:bg-opacity-100
+							   md:hover:scale-110
+							   flex flex-col items-center text-center bg-white ">
+		<img src="/images/firmy.svg" alt="triangle with all three sides equal" height="87" width="100" />
+		<blockquote class=" mx-auto text-gray-500">
+			<h3 class="text-2xl font-semibold text-gray-900">Firmy / Sklady</h3>
+		</blockquote>
+	</figure>
+	<figure class=" bg-opacity-75 py-6
+				   max-w-96
+							   transform duration-200 hover:bg-opacity-100
+							   md:hover:scale-110
+							   flex flex-col items-center text-center bg-white ">
+		<img src="/images/home.svg" alt="triangle with all three sides equal" height="87" width="100" />
+		<blockquote class=" mx-auto text-gray-500">
+			<h3 class="text-2xl font-semibold text-gray-900">Domácnost</h3>
+		</blockquote>
+	</figure>
+	<figure class=" bg-opacity-75 py-6
+				   max-w-96
+							   transform duration-200 hover:bg-opacity-100
+							   md:hover:scale-110
+							   flex flex-col items-center text-center bg-white ">
+		<img src="/images/soud.svg" alt="triangle with all three sides equal" height="87" width="100" />
+		<blockquote class=" mx-auto text-gray-500">
+			<h3 class="text-2xl font-semibold text-gray-900 ">Veřejné instituce</h3>
+		</blockquote>
+	</figure>
+</div>
