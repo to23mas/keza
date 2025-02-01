@@ -13,10 +13,12 @@ final class SluzbyPresenter extends Presenter
 	#[Inject]
 	public ContactFormFactory $contactFormFactory;
 
-	public function actionDruzstva(): void
+	public function actionDefault(): void
 	{
 		$this->template->servicesHeader = '';
+		$this->template->services = true;
 	}
+
 
 	protected function createComponentContactForm(): ContactForm
 	{

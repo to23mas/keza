@@ -17,6 +17,7 @@ final class HomePresenter extends Presenter
 	{
 		$this->template->motto = 'Keza to je záruka jistoty a kvality rychlé pomoci';
 		$this->template->servicesHeader = 'Naše služby';
+		$this->template->team = true;
 	}
 
 	protected function createComponentContactForm(): ContactForm

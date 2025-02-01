@@ -1,3 +1,8 @@
+<style>
+	*:target {
+		scroll-margin-top: 50px;
+	}
+</style>
 <div class="transition-all duration-1000 ease-in-out" id="landing">
 	<div class="max-w-screen-xl mx-auto" id="landing-content">
 		<header class="sm:pt-32 sm:pb-20">
@@ -20,17 +25,16 @@
 					</button>
 				</div>
 			</div>
-			<h2 class="text-center my-6 font-extrabold text-gray-700 text-5xl lg:text-6xl">
+			<h2 class="text-center pt-32 sm:pt-14 font-extrabold text-gray-700 text-5xl lg:text-6xl">
 				Naše služby
 			</h2>
-			<div class="grid grid-cols-1 gap-y-2 mt-32">
-				<figure class="bg-opacity-95
+			<div class="grid grid-cols-1 gap-y-2 mt-24">
+				<figure id="druzstva" class="bg-opacity-95
 							   transform duration-200 hover:bg-opacity-100
 							   md:hover:scale-110
-							   flex flex-row items-center p-2 sm:p-8 text-center bg-white border-b border-gray-200 md:rounded-lg
+							   flex flex-col items-center p-2 sm:p-8 text-center bg-white border-b border-gray-200 md:rounded-lg
 							   ">
-					<img src="/images/svj.svg" alt="triangle with all three sides equal" height="87" width="100" />
-					<div class="w-full text-left pl-8" id="">
+						<img src="/images/svj.svg" alt="triangle with all three sides equal" height="87" width="100" />
 						<blockquote class="text-gray-500 pb-6">
 							<h3 class="text-2xl font-semibold text-gray-900 ">
 								Deratizace, Dezinsekce a Dezinfekce na míru pro SVJ
@@ -45,15 +49,13 @@
 						služby deratizace, dezinsekce a dezinfekce šité na míru potřebám SVJ. Napište nám a my vám
 						rádi
 						poradíme.
-					</div>
 				</figure>
-				<figure class="bg-opacity-95
+				<figure id="firmy" class="bg-opacity-95
 							   transform duration-200 hover:bg-opacity-100
 							   md:hover:scale-110
-							   flex flex-row items-center p-2 sm:p-8 text-center bg-white border-b border-gray-200 md:rounded-lg">
-					<img src="/images/firmy.svg" alt="triangle with all three sides equal" height="87" width="100" />
-					<div class="w-full text-left pl-8" id="">
-						<blockquote class="text-gray-500">
+							   flex flex-col items-center p-2 sm:p-8 text-center bg-white border-b border-gray-200 md:rounded-lg">
+						<img src="/images/firmy.svg" alt="triangle with all three sides equal" height="87" width="100" />
+						<blockquote class="text-gray-500 pb-6">
 							<h3 class="text-2xl font-semibold text-gray-900">
 								Deratizace, Dezinsekce a Dezinfekce na míru pro firmy a sklady
 							</h3>
@@ -62,15 +64,13 @@
 						hlodavci, hmyz nebo škodlivé mikroorganismy, však může tento pocit narušit. Naše profesionální
 						služby deratizace, dezinsekce a dezinfekce vám pomohou vytvořit zdravé a bezpečné prostředí pro
 						vás a vaši rodinu. Napište nám a my vám rádi poradíme.
-					</div>
 				</figure>
-				<figure class="bg-opacity-95
+				<figure id="domacnost" class="bg-opacity-95
 							   transform duration-200 hover:bg-opacity-100
 							   md:hover:scale-110
-							   flex flex-row items-center p-2 sm:p-8 text-center bg-white border-b border-gray-200 md:rounded-lg">
-					<img src="/images/home.svg" alt="triangle with all three sides equal" height="87" width="100" />
-					<div class="w-full text-left pl-8" id="">
-						<blockquote class="text-gray-500">
+							   flex flex-col items-center p-2 sm:p-8 text-center bg-white border-b border-gray-200 md:rounded-lg">
+						<img src="/images/home.svg" alt="triangle with all three sides equal" height="87" width="100" />
+						<blockquote class="text-gray-500 pb-6">
 							<h3 class="text-2xl font-semibold text-gray-900">
 								Deratizace, Dezinsekce a Dezinfekce na míru pro domácnosti
 							</h3>
@@ -79,15 +79,13 @@
 						hlodavci, hmyz nebo škodlivé mikroorganismy, však může tento pocit narušit. Naše profesionální
 						služby deratizace, dezinsekce a dezinfekce vám pomohou vytvořit zdravé a bezpečné prostředí pro
 						vás a vaši rodinu. Napište nám a my vám rádi poradíme.
-					</div>
 				</figure>
-				<figure class="bg-opacity-95
+				<figure id="instituce" class="bg-opacity-95
 							   transform duration-200 hover:bg-opacity-100
 							   md:hover:scale-110
-							   flex flex-row items-center p-2 sm:p-8 text-center bg-white border-b border-gray-200 md:rounded-lg">
-					<img src="/images/soud.svg" alt="triangle with all three sides equal" height="87" width="100" />
-					<div class="w-full text-left pl-8" id="">
-						<blockquote class="text-gray-500">
+							   flex flex-col items-center p-2 sm:p-8 text-center bg-white border-b border-gray-200 md:rounded-lg">
+						<img src="/images/soud.svg" alt="triangle with all three sides equal" height="87" width="100" />
+						<blockquote class="text-gray-500 pb-6">
 							<h3 class="text-2xl font-semibold text-gray-900 ">
 								Deratizace, Dezinsekce a Dezinfekce na míru pro veřejné instituce
 							</h3>
@@ -97,7 +95,21 @@
 						klienty. Výskyt škůdců či škodlivých mikroorganismů může ohrozit zdraví lidí a narušit běžný
 						provoz. Naše profesionální služby deratizace, dezinsekce a dezinfekce jsou navrženy tak, aby
 						splňovaly přísné požadavky veřejných institucí a pomohly zajistit čistotu a hygienu.
-					</div>
+				</figure>
+				<figure id="potraviny" class="bg-opacity-95
+							   transform duration-200 hover:bg-opacity-100
+							   md:hover:scale-110 mb-4
+							   flex flex-col items-center p-2 sm:p-8 text-center bg-white border-b border-gray-200 md:rounded-lg">
+					<img src="/images/fork.jpeg" alt="triangle with all three sides equal" height="87" width="100" />
+						<blockquote class="text-gray-500 pb-6">
+							<h3 class="text-2xl font-semibold text-gray-900 ">
+								Deratizace, Dezinsekce a Dezinfekce na míru pro potravinářské podniky a restaurace
+							</h3>
+						</blockquote>
+						Potravinářské podniky a restaurace čelí přísným hygienickým normám a kontrolám, aby zajistily
+						bezpečnost a kvalitu potravin. Výskyt škůdců nebo mikroorganismů může vážně ohrozit provoz,
+						poškodit reputaci a představovat zdravotní riziko pro zákazníky. Naše profesionální služby deratizace,
+						dezinsekce a dezinfekce jsou navrženy tak, aby splňovaly specifické potřeby potravinářských provozů a zajistily čisté a bezpečné prostředí.
 				</figure>
 			</div>
 		</header>

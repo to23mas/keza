@@ -3,12 +3,12 @@
 		transition-property: height;
 	}
 </style>
-<nav class="bg-transparent border-gray-200 transition-colors duration-500 w-full fixed z-50" id="navbar">
+<nav class="bg-white border-gray-200 transition-colors duration-500 w-full fixed z-50" id="navbar">
 	<div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto sm:h-28 transition-height ease-[cubic-bezier(0.65, 0, 0.35, 1)] duration-500"
 		id="content">
 		<div>
-			<a href="#landing" class="butts hidden items-center shadow-gray-400" id="logo">
-				<img src="/images/logo.png" class="ml-4 transition-all duration-700 transform scale-150 mr-4 mt-4"
+			<a n:href="Home:default" class="flex items-center" id="logo">
+				<img src="/images/logo.png" class="ml-4 transition-all duration-700 transform scale-150 mr-4"
 					alt=" Logo" id="logoImg" style="width: 45px; height: 45px;" />
 			</a>
 		</div>
@@ -22,20 +22,29 @@
 					d="M1 1h15M1 7h15M1 13h15" />
 			</svg>
 		</button>
-		<div class="hidden w-full md:block md:w-auto bg-white sm:pl-4 sm:pr-2
-			rounded-full sm:py-2 shadow-gray-400 shadow-lg sm:mb-1" id="navbar-default">
+		<div class="w-full md:block md:w-auto bg-white sm:pl-4 sm:pr-2 sm:py-2 sm:mb-1 hidden" id="navbar-default">
 			<ul
 				class="font-medium flex flex-col items-center p-4 md:p-0 sm:mt-4 sm:border sm:border-gray-100 rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
 				<li>
-					<a href="#services"
-						class="butts block px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0">Služby</a>
+					<a n:href="Sluzby:default"
+						class="butts block px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0
+						md:hover:text-red-700 md:p-0
+						{ifset $services}
+							md:text-red-700 md:p-0
+						{else}
+							md:hover:text-red-700 md:p-0
+						{/ifset}
+						">
+						 Služby</a>
 				</li>
+				{ifset $team}
 				<li>
-					<a href="#our-team"
+					<a href="#team"
 						class="butts block px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0">
 						O nás
 					</a>
 				</li>
+				{/ifset}
 				<li>
 					<a href="#contact"
 						class="butts block px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-0">Kontakt</a>
@@ -70,42 +79,14 @@
 </nav>
 
 <script n:syntax="off">
-	document.querySelectorAll('.butts').forEach(anchor => {
-		anchor.addEventListener('click', function (e) {
-			e.preventDefault();
-			const targetId = this.getAttribute('href');
-			const targetElement = document.querySelector(targetId);
-			targetElement.scrollIntoView({behavior: 'smooth', block: 'start'});
-		});
-	});
-
 	document.addEventListener('scroll', () => {
-		const navbar = document.getElementById('navbar');
-		const logoEl = document.getElementById('logo');
-		const navbarContent = document.getElementById('content');
-		const navbarDef = document.getElementById('navbar-default');
-
-		const originalBg = 'bg-transparent';
-		const stickyBg = 'bg-white';
-		const originalH = 'sm:h-24';
-		const stickyH = 'sm:h-14';
-
+		const content = document.getElementById('content');
 		if (window.scrollY > 50) {
-			logoEl.classList.remove('shadow-lg', 'shadow-gray-400', 'sm:border', 'sm:border-gray-200', 'hidden');
-			logoEl.classList.add('flex');
-			navbarDef.classList.remove('shadow-lg', 'shadow-gray-400', 'sm:border', 'sm:border-gray-200');
-			navbar.classList.remove(originalBg);
-			navbar.classList.add(stickyBg);
-			content.classList.remove(originalH);
-			content.classList.add(stickyH);
+			content.classList.remove('sm:h-24');
+			content.classList.add('sm:h-14');
 		} else {
-			logoEl.classList.add('shadow-lg', 'shadow-gray-400', 'sm:border', 'sm:border-gray-200', 'hidden');
-			logoEl.classList.remove('flex');
-			navbarDef.classList.add('shadow-lg', 'shadow-gray-400', 'sm:border', 'sm:border-gray-200');
-			navbar.classList.remove(stickyBg);
-			navbar.classList.add(originalBg);
-			content.classList.add(originalH);
-			content.classList.remove(stickyH);
+			content.classList.add('sm:h-24');
+			content.classList.remove('sm:h-14');
 		}
 	});
 </script>
